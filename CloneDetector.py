@@ -1,6 +1,10 @@
-# test using glob
+# idea:
+# TODO
 
-# -------------------------------------------
+# ------------------------------------------------------------------------------
+# implementation
+# ------------------------------------------------------------------------------
+
 def md5(filename):
     import hashlib
 
@@ -11,7 +15,7 @@ def md5(filename):
             hash_md5.update(chunk)
     return hash_md5.hexdigest()
 
-# -------------------------------------------
+# ------------------------------------------------------------------------------
 
 def humanReadableFormat(num, suffix='B'):
     # human readable version of the file size:
@@ -22,7 +26,7 @@ def humanReadableFormat(num, suffix='B'):
         num /= 1024.0
     return "%.1f%s%s" % (num, 'Yi', suffix)
 
-# -------------------------------------------
+# ------------------------------------------------------------------------------
 
 from pathlib import Path
 
@@ -52,6 +56,8 @@ for elem in fileList:
         hashDict[md5sum].append(str(elem.absolute()))
     except PermissionError:
         print("permission-error with:", str(elem.absolute()))
+
+# ------------------------------------------------------------------------------
 
 # evaluation of the duplicate-evaluation
 print("###################################################")
