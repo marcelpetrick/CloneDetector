@@ -1,10 +1,17 @@
 # idea:
 # TODO
+#
+# First create a list of all usable files. Then process with some hashing-algorithm (blockwise), then store them in a dictionary.
+# The value inside the dict is a list of filenames which have the same value.
+# TODO maybe check the filesize as additional comparator (in case of hash clashes).
+# TODO also make it use several processors. multiprocessing.Pool(..)
 
 # ------------------------------------------------------------------------------
 # implementation
 # ------------------------------------------------------------------------------
 
+# TODO switch to SHA1: performance should not be hit hard; task has to be multiprocessed anyway ..
+# http://atodorov.org/blog/2013/02/05/performance-test-md5-sha1-sha256-sha512/ - SHA512 can be better with bigger blocksizes
 def md5(filename):
     import hashlib
 
